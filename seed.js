@@ -16,6 +16,22 @@ const seedDb = async () => {
     result: "computer",
     playerId: john.id,
   });
+  await Games.create({
+    result: "player",
+    playerId: josh.id,
+  });
+  await Games.create({
+    result: "player",
+    playerId: john.id,
+  });
+  await Games.create({
+    result: "computer",
+    playerId: josh.id,
+  });
+  await Games.create({
+    result: "computer",
+    playerId: john.id,
+  });
 };
 
 seedDb();

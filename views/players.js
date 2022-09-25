@@ -11,8 +11,10 @@ module.exports = (players) => html`
       <link rel="stylesheet" href="/style.css" />
     </head>
     <body>
-      <h1>Players:</h1>
-      ${players.map((player) => html` <h1>${player.username}</h1> `)}
+      <div id="players">
+        <h1>Players:</h1>
+        ${players.map((player) => html` <h3>${player.username}</h3> `)}
+      </div>
     </body>
   </html>
 `;
