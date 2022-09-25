@@ -3,16 +3,17 @@ const morgan = require("morgan");
 const client = require("./db");
 
 const app = express();
-const router = require("./routes/index.js");
-app.use("/index", router);
+
 app.use(express.urlencoded({ extended: false }));
 app.use(morgan("dev"));
 app.use(express.static(__dirname + "/public"));
+app.use("/players", require("./routes/playerRoute"));
 
 app.get("/", (req, res) => {
-  res.send("hello world!");
+  res.send("in progress");
 });
-const PORT = 1337;
+
+const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`App listening in port ${PORT}`);
 });
