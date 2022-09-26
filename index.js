@@ -8,6 +8,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(morgan("dev"));
 app.use(express.static(__dirname + "/public"));
 app.use("/players", require("./routes/playerRoute"));
+app.use("/", require("./routes/updateUserName"));
+app.use("/", require("./routes/game"));
 
 app.get("/", (req, res) => {
   res.send("in progress");
