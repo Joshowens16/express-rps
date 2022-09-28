@@ -3,6 +3,7 @@ const router = express.Router();
 const { Games, Player } = require("../db");
 const gameView = require("../views/gameView");
 
+//Still working on this but this is supposed to be for playing the game:)
 router.get("/game", (req, res, next) => {
   try {
     res.send(gameView());

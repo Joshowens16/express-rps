@@ -12,6 +12,7 @@ router.get("/update-user/:id", async (req, res) => {
   });
   res.send(updateName(player));
 });
+// takes in a new username via the body and updates it in the database
 router.put("/update-user/:id", async (req, res, next) => {
   try {
     await Player.update(
