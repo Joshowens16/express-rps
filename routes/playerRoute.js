@@ -9,6 +9,16 @@ router.get("/", async (req, res) => {
   res.send(players(playersDb));
 });
 router.get("/games/:id", async (req, res) => {
+  const gameId = req.params.id;
+  const gameStats = await Games.findAll({
+    include: Players,
+    where: {
+      id: gameId,
+    },
+  });
+  res.send();
+});
+router.get("/:id", async (req, res) => {
   const playId = req.params.id;
   const playerStats = await Player.findAll({
     include: Games,
